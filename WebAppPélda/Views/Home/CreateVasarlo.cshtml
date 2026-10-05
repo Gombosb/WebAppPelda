@@ -1,0 +1,48 @@
+﻿@model WebAppPélda.Models.Customer
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-mt4" style="max-width: 600px;">
+    <h2 class="mb-4">Vásárló adatai</h2>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss>alert</button>
+        </div>
+    }]
+
+
+    <form asp asp-controller="Home" asp-action="CreateVasarlo" method="post" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label asp-for="Nev" class="form-label">Név</label>
+            <input asp-for="Nev" class="form-control" placeholder="Minta János">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cim" class="form-label">Cím</label>
+            <input asp-for="Cim" class="form-control" placeholder="Minta Cím">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" placeholder="Minta Email">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Telefon" class="form-label">Telefon</label>
+            <input asp-for="Telefon" class="form-control" placeholder="Minta Telefon">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Pontszam" class="form-label">Pontszám</label>
+            <input asp-for="Pontszam" class="form-control" placeholder="MintaPontszám">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Mentés</button>
+
+    </form>
+</div>
